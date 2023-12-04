@@ -85,6 +85,7 @@ window.dataLayer = window.dataLayer || [];
 $tcfLine
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
+gtag('config', 'G-CTJ58Z1MRK');
 gtag('config', '$gaId', $gtConfigJson);
 EOS
 );
