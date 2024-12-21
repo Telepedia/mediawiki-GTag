@@ -14,7 +14,7 @@ class GTagHooks {
 		$config = $out->getConfig();
 		$request = $out->getRequest();
 		$permMan = MediaWikiServices::getInstance()->getPermissionManager();
-
+		$skinName = $sk->getSkinName();
 		$gaId = $config->get( 'GTagAnalyticsId' );
 		$anonymizeIP = $config->get( 'GTagAnonymizeIP' );
 		$honorDNT = $config->get( 'GTagHonorDNT' );
@@ -87,6 +87,9 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-CTJ58Z1MRK');
 gtag('config', '$gaId', $gtConfigJson);
+gtag('event', 'mediawiki_statistics', {
+    'skin': '$skinName'
+});
 EOS
 );
 	}
