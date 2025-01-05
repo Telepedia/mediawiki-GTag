@@ -1,3 +1,5 @@
+<?php
+
 use MediaWiki\MediaWikiServices;
 
 class GTagHooks {
