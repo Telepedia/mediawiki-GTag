@@ -47,7 +47,7 @@ class GTagHooks {
         if ( $anonymizeIP ) {
             $gtConfig['anonymize_ip'] = true;
         }
-        $gtConfigJson = json_encode( $gtConfig ) ?: '{}';
+        $gtConfigJson = empty($gtConfig) ? '{}' : json_encode($gtConfig);
 
         $tcfLine = $enableTCF ? 'window["gtag_enable_tcf_support"] = true;' : '';
 
