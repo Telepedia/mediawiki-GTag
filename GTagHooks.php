@@ -32,13 +32,6 @@ class GTagHooks {
             }
         }
 
-        if ( $honorDNT ) {
-            $out->addVaryHeader( 'DNT' );
-            if ( $request->getHeader( 'DNT' ) === '1' ) {
-                return; // Respect DNT header
-            }
-        }
-
         if ( $permMan->userHasRight( $user, 'gtag-exempt' ) ) {
             return; // User is exempt from tracking
         }
